@@ -1,0 +1,144 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #000;
+  color: #fff;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bold;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.header {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 80px;
+  color: #006747;
+  text-transform: capitalize;
+  animation: headerAnim 1s ease-out forwards;
+}
+
+@keyframes headerAnim {
+  0% {
+    font-size: 120px; /* Başlangıç boyutu */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  100% {
+    font-size: 25px; /* Son boyut */
+    top: 20px;
+    left: 20px;
+    transform: translate(0, 0);
+  }
+}
+
+.header {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 120px; /* Başlangıçta büyük yazı */
+  color: #006747;
+  text-transform: capitalize;
+  animation: headerAnim 1.5s ease-out forwards; /* Animasyon sonrası son stili korur */
+}
+
+.header.final-size {
+  font-size: 36px; /* Animasyon bittikten sonra büyüteceğimiz sabit boyut */
+}
+.content {
+  text-align: center;
+  max-width: 600px;
+  opacity: 0; /* Başlangıçta görünmez */
+  transition: opacity 0.5s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.content.show {
+  opacity: 1; /* Animasyon tamamlandığında görünür olacak */
+}
+
+.content p {
+  margin: 10px 0;
+  opacity: 0;
+  animation: shakeIn 1s forwards;
+}
+
+.content .highlight {
+  color: #006747;
+}
+
+.note {
+  font-size: 12px;
+  margin-top: 5px;
+  color: #fff;
+  opacity: 0.8;
+}
+
+.button {
+  display: inline-block;
+  margin: 20px 0;
+  padding: 10px 20px;
+  color: #000; /* Başlangıçta yazı rengi siyah */
+  background-color: #006747;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 16px;
+  opacity: 0;
+  animation: fadeIn 1s 2s forwards;
+  transition: transform 0.3s ease, color 0.3s ease; /* Hem büyüme hem de yazı rengi değişimi için geçiş */
+}
+
+.button:hover {
+  transform: scale(1.2); /* Butonun büyümesi */
+  color: #fff; /* Yazı renginin beyaza dönüşmesi */
+}
+
+.disclaimer {
+  font-size: 10px;
+  margin-top: 20px;
+  color: #ccc;
+  line-height: 1.3;
+  max-width: 300px;
+  margin-left: auto;
+  margin-right: auto;
+  opacity: 0;
+  animation: fadeIn 1s 4s forwards;
+}
+
+/* Çivi çakar gibi gelen animasyon */
+@keyframes shakeIn {
+  0% {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+  50% {
+    transform: translateY(10px);
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Animasyonun tanımı */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

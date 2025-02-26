@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Helal Yuva</title>
+  <link rel="icon" href="untitled folder/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <div class="header">
+      <span class="title">Helal Yuva</span> <span class="house-icon">🏠</span>
+    </div>
+  </header>
+  <main>
+    <div class="content">
+      <p>Flört uygulamalarından <span class="highlight">bıktınız mı?</span></p>
+      <p>Helal bir evlilik için doğru eş arayışınızda <span class="highlight">yardımcı olmamıza ne dersiniz?</span></p>
+      <p>Yalnızca <span class="highlight">huzurlu</span> ve <span class="highlight">İslami değerlere uygun bir yuva kurmak</span> isteyenlere özel bir fırsat!</p>
+      <p>Helal Yuva, yalnızca evlilik niyetiyle hareket edenlerin katıldığı ve İslami ölçütlere uygun bir platformdur. Başvurunuz, Allah(cc) rızası için eşleşmelerin gerçekleşmesini sağlayacak ciddi bir seçim sürecini içerir.</p>
+      
+      <a href="https://forms.gle/HGrMNnJNAmwkrgGT8" target="_blank" class="button">Evlilik İçin Başvur</a>
+      <p class="disclaimer">
+        <span class="highlight">Helal Yuva </span>, Allah rızası ve hayır duası için yürütülen bir platformdur. Evlilik niyetiyle hareket edenlerin katıldığı bu platformda, ciddiyetinizi ölçmek için sembolik bir rakam talep ediyoruz. Diğer platformların aksine, premium özellikler satıp sahte profillerle sizleri kandırmıyoruz. Uygun eşleşme sonrası sizleri, bizim huzurumuzda bir video-konferans aracılığıyla bir araya getiriyor; <span class="highlight"> Allah'ın izniyle </span>, helal bir yuva kurmanıza vesile olmayı amaçlıyoruz.
+      </p>
+    </div>
+  </main>
+  <script>
+    window.addEventListener('load', () => {
+      const header = document.querySelector('.header');
+      const content = document.querySelector('.content');
+      const paragraphs = content.querySelectorAll('p');
+  
+      header.addEventListener('animationend', () => {
+        content.classList.add('show');
+        paragraphs.forEach((p, index) => {
+          p.style.animationDelay = `${index * 0.5}s`; 
+        });
+      });
+    });
+  </script>
+</body>
+</html>
